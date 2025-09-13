@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+  <!-- background -->
+  <rect x="0" y="0" width="24" height="24" rx="4" ry="4" fill="#6D28D9"/>
+  <!-- speech bubble -->
+  <path d="M4 6h16a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-9l-3.5 2.8c-.3.2-.7 0-.7-.4V16H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z" fill="#1F2937"/>
+  <!-- caret '>' -->
+  <path d="M8 10.5l3 1.5-3 1.5" fill="none" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- equal lines '==' -->
+  <path d="M13.5 10.5h4M13.5 13h4" fill="none" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round"/>
+</svg>

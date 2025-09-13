@@ -1,0 +1,14 @@
+{
+  "iconDefinitions": {
+    "_ymd": {
+      "iconPath": "../images/ymd.svg"
+    }
+  },
+  "fileExtensions": {
+    "ymd": "_ymd",
+    "yamd": "_ymd"
+  },
+  "languageIds": {
+    "ymd": "_ymd"
+  }
+}

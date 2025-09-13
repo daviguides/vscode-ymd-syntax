@@ -1,0 +1,70 @@
+{
+  "name": "ymd-syntax",
+  "displayName": "YMD syntax highlighting",
+  "publisher": "yourname",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daviguides/vscode-ymd-syntax.git"
+  },
+  "homepage": "https://github.com/daviguides/vscode-ymd-syntax",
+  "bugs": {
+    "url": "https://github.com/daviguides/vscode-ymd-syntax/issues"
+  },
+  "description": "YMD (YAML Markdown) syntax highlighting for Visual Studio Code.",
+  "categories": [
+    "Programming Languages"
+  ],
+  "icon": "assets/icon.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ymd",
+        "aliases": [
+          "YMD",
+          "yamd",
+          "ymd"
+        ],
+        "extensions": [
+          ".ymd",
+          ".yamd"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ymd",
+        "scopeName": "source.ymd",
+        "path": "./syntaxes/ymd.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.markdown": "markdown"
+        }
+      },
+      {
+        "scopeName": "ymd.placeholders",
+        "path": "./syntaxes/ymd-placeholders.tmLanguage.json",
+        "injectTo": [
+          "source.ymd"
+        ]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "ymd",
+        "path": "./snippets/ymd.code-snippets"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "ymd-icons",
+        "label": "YMD Icons",
+        "path": "./fileIcons/ymd-icon-theme.json"
+      }
+    ]
+  }
+}

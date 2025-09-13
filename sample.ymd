@@ -1,0 +1,64 @@
+id: commitly_commit_message
+kind: commitly
+version: 0.2.0
+title: Generate Conventional Commit Message with Structured Body
+
+system: |
+  You are a **senior software engineer** responsible for writing clear and
+  professional commit messages.  
+  These messages must follow the **Conventional Commit** standard.
+
+  Key goals:
+  - Summarize changes clearly
+  - Group related modifications
+  - Explain *why* when relevant
+
+instructions: |
+  Please generate a commit message with the following structure:
+
+  ### 1. Subject Line
+  - Format: `<type>(<scope>): <summary>`
+  - Example: `feat(api): add new authentication middleware`
+
+  ### 2. Body
+  - Use bullet points (`-`) for each change.
+  - Use **bold** to emphasize important additions or removals.
+  - For multiple items in the same category, create a nested list:
+    - `- Added new API endpoints`
+      - `/login`
+      - `/register`
+
+  ### 3. Footer (Optional)
+  - Add references like issue IDs or links.
+  - Example: `Closes #42`
+
+expected_output: |
+  Example of a well-formatted commit message:
+
+  ```text
+  feat(auth): improve login validation
+
+  - Raise PermissionError for inactive accounts
+  - Log successful login attempts with user ID
+  - Update unit tests for login edge cases
+
+  Closes #123
+  ```
+
+user: |
+  Diff of the changes:
+
+  ```diff
+  --- a/core/auth.py
+  +++ b/core/auth.py
+  @@ -10,6 +10,10 @@
+   def login(user, password):
+       # validate credentials
+  +    if not user.is_active:
+  +        raise PermissionError("Inactive account")
+  +
+  +    logger.info("User %s logged in", user.id)
+       return authenticate(user, password)
+  ```
+
+  Please generate the commit message based on this diff.

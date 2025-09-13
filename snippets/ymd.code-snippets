@@ -1,0 +1,42 @@
+{
+  "New Prompt Scaffold": {
+    "scope": "ymd",
+    "prefix": [
+      "prompt",
+      "ymd-prompt"
+    ],
+    "description": "Scaffold a YMD prompt with common sections",
+    "body": [
+      "id: ${1:my_prompt}",
+      "kind: ${2:generic}",
+      "version: ${3:0.1.0}",
+      "title: ${4:My Prompt Title}",
+      "",
+      "system: |",
+      "  ${5:You are a helpful assistant.}",
+      "",
+      "instructions: |",
+      "  - ${6:Be concise.}",
+      "  - ${7:Answer directly.}",
+      "",
+      "developer: |",
+      "  ${8:Add implementation tips or constraints here.}",
+      "",
+      "user: |",
+      "  ${9:User input goes here.}"
+    ]
+  },
+  "Block Markdown": {
+    "scope": "ymd",
+    "prefix": [
+      "blk",
+      "block",
+      "mdblock"
+    ],
+    "description": "Insert a YAML block scalar for embedded Markdown",
+    "body": [
+      "${1:section}: |",
+      "  ${2:Write Markdown here}"
+    ]
+  }
+}

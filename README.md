@@ -1,69 +1,58 @@
-# YMD Syntax Highlighting (YAML + Markdown Prompts)
+# vscode-ymd-syntax 📄💬
+
+<p align="center">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg"></a>
+  <a href="http://daviguides.github.io"><img src="https://img.shields.io/badge/built%20with-%E2%9D%A4%EF%B8%8F%20by%20Davi%20Guides-orange"></a>
+  <img src="https://img.shields.io/badge/language-VSCode%20Extension-blue">
+  <img src="https://img.shields.io/badge/highlight-YAML%20+%20Markdown-purple">
+</p>
 
 **YMD** (`.ymd` / `.yamd`) is a custom format for organizing **prompts**:  
-- **YAML** is used for metadata and structure.  
-- **Markdown** is embedded in block scalars (`key: |`) to describe prompt content.  
+- **YAML** provides metadata and structure.  
+- **Markdown** lives inside block scalars (`key: |`) for rich prompt text.  
 
-This extension adds **syntax highlighting**, **snippets**, and a **custom icon** for YMD files in VS Code.
-
----
+This VS Code extension brings **syntax highlighting**, **snippets**, and a **custom icon** to make `.ymd` prompts easy to read and maintain.
 
 ## ✨ Features
-- **Hybrid highlighting**: YAML for keys/values, Markdown inside block scalars.  
-- **Snippets**:
+
+- 📑 **Hybrid highlighting**: YAML keys/values + embedded Markdown in block scalars.  
+- ⚡ **Snippets**:
   - `prompt` → scaffold a complete prompt template (`id`, `kind`, `version`, `system`, `instructions`, `developer`, `user`).  
   - `blk` → insert a Markdown block scalar quickly.  
-- **Custom icon theme**: A speech bubble with `>` and `==`, over a purple rounded square — representing a prompt with text.
-
----
+- 💬 **Custom file icon**: A speech bubble with `>` and `==` inside, over a purple rounded square — representing a prompt with text.  
 
 ## 🎯 Motivation
-Prompts often mix **structured metadata** and **free-form text**. Traditional formats (pure YAML or pure Markdown) are limited:  
-- YAML is structured but bad for long text.  
-- Markdown is good for text but lacks metadata organization.  
+
+Prompts often combine **structured metadata** with **free-form instructions**.  
+But neither YAML nor Markdown alone is ideal:  
+
+- YAML is structured but unwieldy for long text.  
+- Markdown is expressive but lacks metadata organization.  
 
 **YMD bridges this gap**:  
-- Use YAML for metadata like `id`, `kind`, `version`.  
-- Use Markdown for sections like `system`, `instructions`, `developer`, `user`.  
+- Use YAML for IDs, kinds, versions, metadata.  
+- Use Markdown for system/instructions/developer/user sections.  
 
-This makes prompts **easier to read, maintain, and share**.
-
----
+➡️ This makes prompts **easier to read, share, and version-control**.
 
 ## 📝 Example
 
-```ymd
-id: commitly_commit_message
-kind: commitly
-version: 0.1.0
-title: Generate Conventional Commit Message with Structured Body
-
-system: |
-  You are a senior software engineer writing Conventional Commit messages.
-
-instructions: |
-  - Be accurate and concise.
-  - Respond only with the commit message.
-
-developer: |
-  1. Subject line: <type>(<scope>): <summary>
-  2. Body: bullet points with details
-  3. Optional: why these changes matter
-
-user: |
-  Diff:
-  {{diff}}
-```
-
----
+![Screenshot](./assets/screenshot.png)
 
 ## 🚀 Usage
+
 1. Open a `.ymd` file in VS Code.  
 2. Syntax highlighting activates automatically.  
 3. Use snippets (`prompt`, `blk`) for faster authoring.  
-4. Enable the custom icon via: **Preferences → File Icon Theme → YMD Icons**.
+4. Enable the custom icon via:  
+   **Preferences → File Icon Theme → YMD Icons**.
 
----
+## ⚖️ License
 
-## 📦 License
-MIT License.
+MIT License
+
+## 👨‍💼 Author
+
+Built with ❤️ by [Davi Guides](http://daviguides.github.io)
+
+# vscode-ymd-syntax: Write structured prompts with clarity. 📄💬
