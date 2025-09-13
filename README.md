@@ -1,4 +1,4 @@
-# vscode-ymd-syntax 📄💬
+# YMD Syntax Highlighting
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg"></a>
@@ -55,4 +55,4 @@ MIT License
 
 Built with ❤️ by [Davi Guides](http://daviguides.github.io)
 
-# vscode-ymd-syntax: Write structured prompts with clarity. 📄💬
+Write structured prompts with clarity.
