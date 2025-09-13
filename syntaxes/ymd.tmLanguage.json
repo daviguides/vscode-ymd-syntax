@@ -3,7 +3,7 @@
   "name": "YMD (YAML + Markdown) layered on YAML",
   "patterns": [
     {
-      "name": "meta.embedded.block.markdown",
+      "name": "meta.embedded.block.markdown.ymd",
       "begin": "^(\\s*)([A-Za-z_][A-Za-z0-9_-]*)(:)\\s*\\|\\s*$",
       "beginCaptures": {
         "2": {
@@ -14,26 +14,13 @@
         }
       },
       "end": "^(?=\\S)|^(\\s{0,})(?=[A-Za-z_][A-Za-z0-9_-]*\\s*:)",
+      "contentName": "text.html.markdown",
       "patterns": [
         {
           "include": "#placeholders"
         },
         {
-          "begin": "^(\\s{2,})",
-          "beginCaptures": {
-            "1": {
-              "name": "punctuation.whitespace.indent"
-            }
-          },
-          "end": "^(?=\\S)|^(\\s{0,})(?=[A-Za-z_][A-Za-z0-9_-]*\\s*:)",
-          "patterns": [
-            {
-              "include": "#placeholders"
-            },
-            {
-              "include": "text.html.markdown"
-            }
-          ]
+          "include": "text.html.markdown"
         }
       ]
     },
@@ -41,7 +28,7 @@
       "include": "#placeholders"
     },
     {
-      "include": "source.yaml"
+      "include": "source.ymd.yaml"
     }
   ],
   "repository": {

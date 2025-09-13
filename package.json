@@ -1,8 +1,8 @@
 {
   "name": "ymd-syntax",
-  "displayName": "YMD syntax highlighting",
+  "displayName": "YMD Format Syntax Highlighting",
   "publisher": "daviguides",
-  "version": "0.0.1",
+  "version": "0.0.12",
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -40,10 +40,7 @@
       {
         "language": "ymd",
         "scopeName": "source.ymd",
-        "path": "./syntaxes/ymd.tmLanguage.json",
-        "embeddedLanguages": {
-          "meta.embedded.block.markdown": "markdown"
-        }
+        "path": "./syntaxes/ymd.tmLanguage.json"
       },
       {
         "scopeName": "ymd.placeholders",
@@ -51,6 +48,10 @@
         "injectTo": [
           "source.ymd"
         ]
+      },
+      {
+        "scopeName": "source.ymd.yaml",
+        "path": "./syntaxes/ymd-yaml.tmLanguage.json"
       }
     ],
     "snippets": [

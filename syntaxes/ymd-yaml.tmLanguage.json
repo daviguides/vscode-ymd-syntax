@@ -1,0 +1,105 @@
+{
+    "scopeName": "source.ymd.yaml",
+    "name": "YMD YAML (neutral)",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#blockScalarHeader"
+        },
+        {
+            "include": "#keyValue"
+        },
+        {
+            "include": "#sequences"
+        },
+        {
+            "include": "#scalars"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.ymd",
+                    "match": "\\s*#.*$"
+                }
+            ]
+        },
+        "blockScalarHeader": {
+            "patterns": [
+                {
+                    "name": "meta.block-scalar.header.ymd",
+                    "match": "^(\\s*)([A-Za-z_][A-Za-z0-9_-]*)(:)\\s*\\|[+-]?\\d*\\s*$",
+                    "captures": {
+                        "2": {
+                            "name": "entity.name.tag.ymd"
+                        },
+                        "3": {
+                            "name": "punctuation.separator.key-value.mapping.ymd"
+                        }
+                    }
+                }
+            ]
+        },
+        "keyValue": {
+            "patterns": [
+                {
+                    "name": "meta.mapping.ymd",
+                    "match": "^(\\s*)([A-Za-z_][A-Za-z0-9_-]*)(:)\\s*(.+)?$",
+                    "captures": {
+                        "2": {
+                            "name": "entity.name.tag.ymd"
+                        },
+                        "3": {
+                            "name": "punctuation.separator.key-value.mapping.ymd"
+                        },
+                        "4": {
+                            "name": "string.unquoted.scalar.ymd"
+                        }
+                    }
+                }
+            ]
+        },
+        "sequences": {
+            "patterns": [
+                {
+                    "name": "markup.list.unnumbered.ymd",
+                    "match": "^(\\s*)-\\s+"
+                }
+            ]
+        },
+        "scalars": {
+            "patterns": [
+                {
+                    "name": "constant.language.boolean.ymd",
+                    "match": "(?i)\\b(?:true|false|yes|no|on|off)\\b"
+                },
+                {
+                    "name": "constant.language.null.ymd",
+                    "match": "(?i)\\bnull\\b|~"
+                },
+                {
+                    "name": "constant.numeric.ymd",
+                    "match": "(?<![A-Za-z0-9_])[-+]?\\d+(?:\\.\\d+)?\\b"
+                },
+                {
+                    "name": "string.quoted.double.ymd",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.ymd",
+                    "begin": "'",
+                    "end": "'"
+                }
+            ]
+        }
+    }
+}
