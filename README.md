@@ -3,8 +3,8 @@
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg"></a>
   <a href="http://daviguides.github.io"><img src="https://img.shields.io/badge/built%20with-%E2%9D%A4%EF%B8%8F%20by%20Davi%20Guides-orange"></a>
-  <img src="https://img.shields.io/badge/language-VSCode%20Extension-blue">
-  <img src="https://img.shields.io/badge/highlight-YAML%20+%20Markdown-purple">
+  <a href="https://marketplace.visualstudio.com/items?itemName=daviguides.ymd-syntax"><img src="https://img.shields.io/badge/language-VSCode%20Extension-blue"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=daviguides.ymd-syntax"><img src="https://img.shields.io/badge/highlight-YAML%20+%20Markdown-purple"></a>
 </p>
 
 **YMD** (`.ymd` / `.yamd`) is a custom format for organizing **prompts**:  
