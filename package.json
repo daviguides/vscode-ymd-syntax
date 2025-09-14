@@ -2,9 +2,9 @@
   "name": "ymd-syntax",
   "displayName": "YMD/PMD Format Syntax Highlighting",
   "publisher": "daviguides",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "engines": {
-    "vscode": "^1.90.0"
+    "vscode": "^1.104.0"
   },
   "license": "MIT",
   "repository": {

@@ -1,58 +1,107 @@
-# YMD Syntax Highlighting
+# YMD / PMD Syntax Highlighting
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg"></a>
   <a href="http://daviguides.github.io"><img src="https://img.shields.io/badge/built%20with-%E2%9D%A4%EF%B8%8F%20by%20Davi%20Guides-orange"></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=daviguides.ymd-syntax"><img src="https://img.shields.io/badge/language-VSCode%20Extension-blue"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=daviguides.ymd-syntax"><img src="https://img.shields.io/badge/highlight-YAML%20+%20Markdown-purple"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=daviguides.ymd-syntax"><img src="https://img.shields.io/badge/highlight-YAML%20+%20Markdown%20+%20Jinja2-purple"></a>
 </p>
 
-**YMD** (`.ymd` / `.yamd`) is a custom format for organizing **prompts**:  
-- **YAML** provides metadata and structure.  
-- **Markdown** lives inside block scalars (`key: |`) for rich prompt text.  
+This VS Code extension provides **syntax highlighting**, **snippets**, **icons**, and now **navigation** for two custom prompt formats:
 
-This VS Code extension brings **syntax highlighting**, **snippets**, and a **custom icon** to make `.ymd` prompts easy to read and maintain.
+- **YMD** (`.ymd` / `.yamd`) → YAML for metadata + Markdown for sections + Jinja2 templating.  
+- **PMD** (`.pmd`) → Prompt Markdown partials with Jinja2.  
+
+Together, these formats let you **author modular, structured prompts** that are easy to read, reuse, and maintain.
+
+---
 
 ## ✨ Features
 
-- 📑 **Hybrid highlighting**: YAML keys/values + embedded Markdown in block scalars.  
+- 📑 **Hybrid highlighting**:
+  - YAML for keys/values
+  - Markdown for `|` block scalars
+  - Jinja2 (`{{ var }}`, `{% include … %}`, `{# comment #}`) anywhere
 - ⚡ **Snippets**:
-  - `prompt` → scaffold a complete prompt template (`id`, `kind`, `version`, `system`, `instructions`, `developer`, `user`).  
-  - `blk` → insert a Markdown block scalar quickly.  
-- 💬 **Custom file icon**: A speech bubble with `>` and `==` inside, over a purple rounded square — representing a prompt with text.  
+  - `prompt` → scaffold a full `.ymd` template (`id`, `kind`, `version`, `system`, `instructions`, `expected_output`, `user`).  
+  - `blk` → quick Markdown block scalar.  
+- 💬 **Custom icons** for `.ymd` and `.pmd` files.  
+- 🧭 **Include navigation** (since v0.3.0):  
+  Cmd+Click (macOS) / Ctrl+Click (Win/Linux) on `{% include "file.pmd" %}` opens the referenced file.  
+
+---
 
 ## 🎯 Motivation
 
-Prompts often combine **structured metadata** with **free-form instructions**.  
-But neither YAML nor Markdown alone is ideal:  
+Prompt engineering often mixes **metadata** (IDs, kinds, versions) with **free-form instructions**.  
 
-- YAML is structured but unwieldy for long text.  
-- Markdown is expressive but lacks metadata organization.  
+- YAML is structured but clumsy for long text.  
+- Markdown is expressive but lacks metadata.  
+- Jinja2 adds modularity and reusability (`include`, placeholders, conditions).  
 
-**YMD bridges this gap**:  
-- Use YAML for IDs, kinds, versions, metadata.  
-- Use Markdown for system/instructions/developer/user sections.  
+**YMD/PMD bridge the gap**:  
+- `.ymd` = **prompt manifest** (metadata + sections).  
+- `.pmd` = **partials** (Markdown+Jinja building blocks).  
 
-➡️ This makes prompts **easier to read, share, and version-control**.
+➡️ This makes prompts **readable, composable, and easy to version-control**.
+
+---
 
 ## 📝 Example
 
+```yaml
+id: pr_description_generator
+kind: gh_pr
+version: 0.1.0
+title: Generate GitHub Pull Request Description from Diff
+
+system: |
+  You are a **senior maintainer** writing reviewer-friendly PR descriptions.
+  {% include "gh_pr/system_goals.pmd" %}
+
+instructions: |
+  {% include "gh_pr/sections.pmd" %}
+
+expected_output: |
+  {% include "gh_pr/example.pmd" %}
+
+user: |
+  Context and diff:
+  ```diff
+  {{ diff }}
+  ```
+```
+
 ![Screenshot](./images/screenshot.png)
+
+---
 
 ## 🚀 Usage
 
-1. Open a `.ymd` file in VS Code.  
-2. Syntax highlighting activates automatically.  
+1. Install from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=daviguides.ymd-syntax).  
+2. Open a `.ymd` or `.pmd` file → syntax highlighting activates automatically.  
 3. Use snippets (`prompt`, `blk`) for faster authoring.  
-4. Enable the custom icon via:  
-   **Preferences → File Icon Theme → YMD Icons**.
+4. Enable icons via: **Preferences → File Icon Theme → YMD Icons**.  
+5. Cmd+Click (macOS) / Ctrl+Click (Win/Linux) on `{% include "file.pmd" %}` to jump to partials.  
+
+---
+
+## 📦 Roadmap
+
+- Completion for section keys (`system`, `instructions`, etc.).  
+- Folding ranges for long Markdown blocks.  
+- Diagnostics for missing includes/placeholders.  
+
+---
 
 ## ⚖️ License
 
 MIT License
 
+---
+
 ## 👨‍💼 Author
 
 Built with ❤️ by [Davi Guides](http://daviguides.github.io)
 
-Write structured prompts with clarity.
+Structured prompts, modular and clear.
