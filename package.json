@@ -1,8 +1,8 @@
 {
   "name": "ymd-syntax",
-  "displayName": "YMD Format Syntax Highlighting",
+  "displayName": "YMD/PMD Format Syntax Highlighting",
   "publisher": "daviguides",
-  "version": "0.0.12",
+  "version": "0.3.0",
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -15,11 +15,20 @@
   "bugs": {
     "url": "https://github.com/daviguides/vscode-ymd-syntax/issues"
   },
-  "description": "YMD (YAML Markdown) syntax highlighting for Visual Studio Code.",
+  "description": "Syntax highlighting for YMD (YAML+Markdown+Jinja) manifests and PMD (Prompt Markdown+Jinja) partials.",
   "categories": [
     "Programming Languages"
   ],
-  "icon": "assets/icon.png",
+  "icon": "images/icon.png",
+  "scripts": {
+    "build": "esbuild src/extension.ts --bundle --outfile=out/extension.js --platform=node --external:vscode",
+    "watch": "npm run build -- --watch"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:ymd",
+    "onLanguage:pmd"
+  ],
   "contributes": {
     "languages": [
       {
@@ -34,6 +43,17 @@
           ".yamd"
         ],
         "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "pmd",
+        "aliases": [
+          "PMD",
+          "pmd"
+        ],
+        "extensions": [
+          ".pmd"
+        ],
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
@@ -43,10 +63,19 @@
         "path": "./syntaxes/ymd.tmLanguage.json"
       },
       {
-        "scopeName": "ymd.placeholders",
-        "path": "./syntaxes/ymd-placeholders.tmLanguage.json",
+        "language": "pmd",
+        "scopeName": "source.pmd",
+        "path": "./syntaxes/pmd.tmLanguage.json",
+        "embeddedLanguages": {
+          "text.html.markdown": "markdown"
+        }
+      },
+      {
+        "scopeName": "source.jinja",
+        "path": "./syntaxes/jinja.tmLanguage.json",
         "injectTo": [
-          "source.ymd"
+          "source.ymd",
+          "source.pmd"
         ]
       },
       {
@@ -58,6 +87,10 @@
       {
         "language": "ymd",
         "path": "./snippets/ymd.code-snippets"
+      },
+      {
+        "language": "pmd",
+        "path": "./snippets/pmd.code-snippets"
       }
     ],
     "iconThemes": [
@@ -67,5 +100,11 @@
         "path": "./fileIcons/ymd-icon-theme.json"
       }
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^24.4.0",
+    "@types/vscode": "^1.104.0",
+    "esbuild": "^0.25.9",
+    "typescript": "^5.9.2"
   }
 }

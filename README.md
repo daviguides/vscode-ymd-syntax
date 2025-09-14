@@ -37,7 +37,7 @@ But neither YAML nor Markdown alone is ideal:
 
 ## 📝 Example
 
-![Screenshot](./assets/screenshot.png)
+![Screenshot](./images/screenshot.png)
 
 ## 🚀 Usage
 

@@ -1,0 +1,8 @@
+{
+  "scopeName": "source.pmd",
+  "name": "PMD (Prompt Markdown + Jinja2)",
+  "patterns": [
+    { "include": "source.jinja" },
+    { "include": "text.html.markdown" }
+  ]
+}
