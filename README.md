@@ -49,7 +49,7 @@ Prompt engineering often mixes **metadata** (IDs, kinds, versions) with **free-f
 
 ## 📝 Example
 
-```yaml
+````yaml
 id: pr_description_generator
 kind: gh_pr
 version: 0.1.0
@@ -70,7 +70,7 @@ user: |
   ```diff
   {{ diff }}
   ```
-```
+````
 
 ![Screenshot](./images/screenshot.png)
 
