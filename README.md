@@ -14,8 +14,6 @@ This VS Code extension provides **syntax highlighting**, **snippets**, **icons**
 
 Together, these formats let you **author modular, structured prompts** that are easy to read, reuse, and maintain.
 
----
-
 ## ✨ Features
 
 - 📑 **Hybrid highlighting**:
@@ -28,8 +26,6 @@ Together, these formats let you **author modular, structured prompts** that are 
 - 💬 **Custom icons** for `.ymd` and `.pmd` files.  
 - 🧭 **Include navigation** (since v0.3.0):  
   Cmd+Click (macOS) / Ctrl+Click (Win/Linux) on `{% include "file.pmd" %}` opens the referenced file.  
-
----
 
 ## 🎯 Motivation
 
@@ -44,8 +40,6 @@ Prompt engineering often mixes **metadata** (IDs, kinds, versions) with **free-f
 - `.pmd` = **partials** (Markdown+Jinja building blocks).  
 
 ➡️ This makes prompts **readable, composable, and easy to version-control**.
-
----
 
 ## 📝 Example
 
@@ -74,8 +68,6 @@ user: |
 
 ![Screenshot](./images/screenshot.png)
 
----
-
 ## 🚀 Usage
 
 1. Install from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=daviguides.ymd-syntax).  
@@ -84,21 +76,15 @@ user: |
 4. Enable icons via: **Preferences → File Icon Theme → YMD Icons**.  
 5. Cmd+Click (macOS) / Ctrl+Click (Win/Linux) on `{% include "file.pmd" %}` to jump to partials.  
 
----
-
 ## 📦 Roadmap
 
 - Completion for section keys (`system`, `instructions`, etc.).  
 - Folding ranges for long Markdown blocks.  
 - Diagnostics for missing includes/placeholders.  
 
----
-
 ## ⚖️ License
 
 MIT License
-
----
 
 ## 👨‍💼 Author
 

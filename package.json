@@ -1,8 +1,8 @@
 {
   "name": "ymd-syntax",
-  "displayName": "YMD/PMD Format Syntax Highlighting",
+  "displayName": "YMD / PMD Syntax Highlighting",
   "publisher": "daviguides",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "engines": {
     "vscode": "^1.104.0"
   },
